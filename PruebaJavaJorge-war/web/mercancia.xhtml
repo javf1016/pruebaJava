@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+    </h:head>
+    <body>
+        <h:form id="form">
+            <h:panelGrid columns="2">
+                <h:outputText value="Nombre PRODUCTO" />
+                <p:inputText value="#{mercanciaBean.nombreProducto}" required="true"/>
+                
+                <h:outputText value="Ciudad Destino" />
+                <p:inputText value="#{mercanciaBean.ciudadDestino}" required="true"/>
+                
+                <h:outputText value="Fecha Salida" />
+                <p:inputText value="#{mercanciaBean.fechaSalida}" required="true">
+                    <f:convertDateTime pattern="dd-MM-yyyy"/> 
+                </p:inputText>
+                
+                <h:outputText value="Precio" />
+                <p:inputText value="#{mercanciaBean.precio}" required="true"/>
+                
+                <h:outputText value="Estado Envio" />
+                <p:inputText value="#{mercanciaBean.estadoEnvio}" required="true"/>
+                
+                <h:outputText value="Destinatario" />
+                <p:inputText value="#{mercanciaBean.destinatarioId}" required="true"/>
+                
+                <h:outputText value="Usuario" />
+                <p:inputText value="#{mercanciaBean.usuarioRegistroId}" required="true"/>
+                
+                <h:outputText value="" />
+                <p:commandButton actionListener="#{mercanciaBean.crear()}"
+                                 update="form"
+                                 value="Crear Mercancia" 
+                                 icon="ui-icon-disk"/>
+            </h:panelGrid>
+
+            <p:dataTable value="#{mercanciaBean.mercancia}" var="m">
+                <p:column headerText="Nombre">
+                    <h:outputText value="#{m.nombreProducto}">
+                    </h:outputText>
+                </p:column> 
+                <p:column headerText="Fecha Envio">
+                   <h:outputText value="#{m.fechaSalida}">
+                   </h:outputText>
+                </p:column> 
+                <p:column headerText="Fecha Llegada">
+                    <h:outputText value="#{m.fechaSalida}">
+                   </h:outputText>
+                </p:column>
+                <p:column headerText="Remitente">
+                    <h:outputText value="#{m.usuarioRegistroId}">
+                   </h:outputText>
+                </p:column>
+                <p:column headerText="Destinatario">
+                    <h:outputText value="#{m.destinatarioId}">
+                   </h:outputText>
+                </p:column> 
+                <p:column headerText="Precio">
+                    <h:outputText value="#{m.precio}">
+                   </h:outputText>
+                </p:column> 
+                <p:column headerText="Estado">
+                    <h:outputText value="#{m.estadoEnvio}">
+                   </h:outputText>
+                </p:column> 
+            </p:dataTable>
+        </h:form>  
+    </body>
+</html>
+
+
