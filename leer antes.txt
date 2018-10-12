@@ -1,0 +1,11 @@
+se genero la conexion con persistence
+se generaron los servicios
+crea usuarios
+crea mercancia
+muestra la mercancia
+
+los perfiles aparecen como date lo cual, 
+se modificaria por una de perfiles, como administrador,
+cliente y no solo dates.
+
+los id aparecen como date
